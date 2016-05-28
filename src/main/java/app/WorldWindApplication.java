@@ -117,7 +117,7 @@ public class WorldWindApplication {
         if (wwd.getModel().getLayers().getLayerByName("countries") == null) {
             ShapefileLoader loader = new ShapefileLoader();
             Shapefile countries = new Shapefile(new File("TM_WORLD_BORDERS_SIMPL-0.3/TM_WORLD_BORDERS_SIMPL-0.3.shp"));
-            RenderableLayer c = (RenderableLayer) loader.createLayerFromShapefile(countries);
+            Layer c = loader.createLayerFromShapefile(countries);
             c.setName("countries");
             c.setOpacity(0.1);
 
@@ -168,18 +168,15 @@ public class WorldWindApplication {
             e.printStackTrace();
         }
 
-
-
         ShapefileLoader loader = new ShapefileLoader();
         Shapefile shp = new Shapefile(shpfile);
-        RenderableLayer l = (RenderableLayer) loader.createLayerFromShapefile(shp);
+        Layer l = loader.createLayerFromShapefile(shp);
         l.setName("mylayer");
         l.setOpacity(0.2);
         Layer last = wwd.getModel().getLayers().getLayerByName("mylayer");
         if (last != null)
             wwd.getModel().getLayers().remove(last);
         wwd.getModel().getLayers().add(l);
-
 
 
 //        try {

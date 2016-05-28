@@ -1,6 +1,7 @@
 package data;
 
 import org.apache.commons.io.FileUtils;
+import org.postgis.PGgeometry;
 
 import java.io.*;
 import java.net.URL;
@@ -78,9 +79,8 @@ public class DataCreator {
 
             zis.closeEntry();
             zis.close();
-            PrintWriter out = new PrintWriter(outputFolder + File.separator + fileName.replaceFirst("\\.[a-zA-Z]+", ".prj"));
-            out.print("GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]]," +
-                    "PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]");
+            PrintWriter out = new PrintWriter(outputFolder + File.separator + fileName.replaceFirst("\\.[a-zA-Z]+",".prj"));
+            out.print("GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]");
             out.close();
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -91,7 +91,7 @@ public class DataCreator {
 //        -s_srs EPSG:4326 -t_srs EPSG:4326
 //        String cmd = "shp2pgsql -s 4326 -d " + shp.getAbsolutePath() + " public."+satname+"fire | psql -h localhost -d postgres -U postgres";
         String cmd = "ogr2ogr -skipfailures -overwrite -f \"PostgreSQL\" PG:\"host=localhost user=postgres dbname=postgres password=postgres\"" +
-                " " + shp.getAbsolutePath() + " -nln public." + satname + "fire";
+                " "+ shp.getAbsolutePath()+" -nln public."+satname+"fire";
         ProcessBuilder pb = new ProcessBuilder("/bin/sh", "-c", cmd);
         try {
             Process p = pb.start();
@@ -121,18 +121,19 @@ public class DataCreator {
     }
 
     public static void downloadAndUpdate(String satname, int days) {
-        if (isUpToDate(satname, days))
+        if (isUpToDate(satname,days))
             return;
 
-        String zipfile = satname + ".zip";
+        String zipfile = satname+".zip";
         String folder = satname;
         String url;
         String shapefile;
         if (satname == "modis") {
-            if (days == 1) {
+            if (days ==1) {
                 url = "https://firms.modaps.eosdis.nasa.gov/active_fire/c6/shapes/zips/MODIS_C6_Global_24h.zip";
                 shapefile = "MODIS_C6_Global_24h.shp";
-            } else {
+            }
+            else {
                 if (days == 2) {
                     url = "https://firms.modaps.eosdis.nasa.gov/active_fire/c6/shapes/zips/MODIS_C6_Global_48h.zip";
                     shapefile = "MODIS_C6_Global_48h.shp";
@@ -141,15 +142,18 @@ public class DataCreator {
                     shapefile = "MODIS_C6_Global_7d.shp";
                 }
             }
-        } else {
+        }
+        else {
             if (days == 1) {
                 url = "https://firms.modaps.eosdis.nasa.gov/active_fire/viirs/shapes/zips/VNP14IMGTDL_NRT_Global_24h.zip";
                 shapefile = "VNP14IMGTDL_NRT_Global_24h.shp";
-            } else {
+            }
+            else {
                 if (days == 2) {
                     url = "https://firms.modaps.eosdis.nasa.gov/active_fire/viirs/shapes/zips/VNP14IMGTDL_NRT_Global_48h.zip";
                     shapefile = "VNP14IMGTDL_NRT_Global_48h.shp";
-                } else {
+                }
+                else{
                     url = "https://firms.modaps.eosdis.nasa.gov/active_fire/viirs/shapes/zips/VNP14IMGTDL_NRT_Global_7d.zip";
                     shapefile = "VNP14IMGTDL_NRT_Global_7d.shp";
                 }
@@ -159,7 +163,7 @@ public class DataCreator {
         DataCreator.unZipIt(zipfile, folder);
 
         File shp = new File(folder, shapefile);
-        DataCreator.shpToDb(shp, satname);
+        DataCreator.shpToDb(shp,satname);
         (new File(zipfile)).delete();
         try {
             FileUtils.deleteDirectory(shp.getParentFile());
@@ -168,7 +172,7 @@ public class DataCreator {
         }
     }
 
-    public static boolean isUpToDate(String satname, int days) {
+    public static boolean isUpToDate(String satname,int days){
 
         Connection c = null;
         Statement stmt = null;
@@ -178,17 +182,15 @@ public class DataCreator {
                     .getConnection("jdbc:postgresql://localhost:5432/postgres",
                             "postgres", "postgres");
             c.setAutoCommit(false);
-            System.out.println("Opened database successfully");
-
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("select exists(select 1 from " + satname + "fire where current_date = acq_date+" + days + ");");
-            while (rs.next()) {
+            ResultSet rs = stmt.executeQuery( "select exists(select 1 from "+satname+"fire where current_date = acq_date+"+days+");" );
+            while ( rs.next() ) {
                 return rs.getBoolean(1);
             }
             rs.close();
             stmt.close();
             c.close();
-        } catch (Exception e) {
+        } catch ( Exception e ) {
             return false;
         }
 
