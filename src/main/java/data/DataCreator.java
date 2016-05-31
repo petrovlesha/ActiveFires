@@ -220,9 +220,6 @@ public class DataCreator {
             String dburl = "jdbc:postgresql://localhost/postgres";
             Connection conn = DriverManager.getConnection(dburl, "postgres", "postgres");
             Statement stat = conn.createStatement();
-//            ResultSet rs = stat.executeQuery("SELECT distinct ST_SnapToGrid(wkb_geometry,0.01) as s from "+satname+"fire where confidence>80");
-//            ResultSet rs = stat.executeQuery("select st_x(ST_Centroid(gc)),st_y(ST_Centroid(gc)), ST_NumGeometries(gc) " +
-//                    "from (select unnest(ST_ClusterWithin(wkb_geometry, 1)) gc from "+satname+"fire) f");
 
             String query ;
             if (satname == "modis")
@@ -281,50 +278,49 @@ public class DataCreator {
     public static RenderableLayer getFireCountries(String satname) {
         RenderableLayer result = new RenderableLayer();
         result.setName("countries");
+        ResultSet rs;
         try {
             String dburl = "jdbc:postgresql://localhost/postgres";
             Connection conn = DriverManager.getConnection(dburl, "postgres", "postgres");
             Statement stat = conn.createStatement();
 
-//            ResultSet rs = stat.executeQuery("select wkb_geometry from countries");
             String confidence;
             if (satname == "modis")
                 confidence = ">50";
             else
                 confidence = "=nominal";
-            ResultSet rs = stat.executeQuery("select c.wkb_geometry, count(distinct m.wkb_geometry) " +
-                    "from countries c left join " + satname + "fire m\n" +
-                    "on st_contains(c.wkb_geometry, m.wkb_geometry) " +
-                    "where confidence" + confidence +" " +
-                    "group by c.wkb_geometry\n" +
-                    "having count(distinct m.wkb_geometry) > 0\n");
+            rs = stat.executeQuery("SELECT ((ST_Dump(c.wkb_geometry)).geom)::geometry(Polygon,4326) geom, COUNT(DISTINCT m.wkb_geometry) \n" +
+                    "FROM countries c LEFT JOIN "+ satname +"fire m \n" +
+                    "ON ST_Contains(c.wkb_geometry, m.wkb_geometry) \n" +
+                    "WHERE confidence" + confidence + " " +
+                    "GROUP BY c.wkb_geometry\n" +
+                    "HAVING COUNT(DISTINCT m.wkb_geometry)  > 0");
 
             while (rs.next()) {
                 Polygon p = (Polygon) ((PGgeometry) rs.getObject(1)).getGeometry();
-//                MultiPolygon mp = (MultiPolygon) ((PGgeometry) rs.getObject(1)).getGeometry();
-//                for (Polygon p : mp.getPolygons()) {
-                    ArrayList<LatLon> pos = new ArrayList<LatLon>();
-                    for (int i = 0; i < p.numPoints(); i++) {
-                        pos.add(new LatLon(Angle.fromDegrees((p.getPoint(i).y > 180) ? 180 : p.getPoint(i).y),
-                                Angle.fromDegrees((p.getPoint(i).x > 180) ? 180 : p.getPoint(i).x)));
-                    }
-//                    pos.add(pos.get(0));
-                    SurfacePolygon sp = new SurfacePolygon(pos);
-
-                    boolean deb = pos.get(0).equals(pos.get(pos.size()-1));
-
-                    BasicShapeAttributes attributes = new BasicShapeAttributes();
-//                    double intencity = 15D * rs.getDouble(2) / rs.getDouble(3) + 0.1;
-//                    if (intencity > 1)
-//                        intencity = 1;
-
-                    attributes.setInteriorMaterial(new Material(new Color(255, 0, 0)));
-                    attributes.setInteriorOpacity(0.5);
-                    attributes.setOutlineMaterial(new Material(new Color(0, 0, 0)));
-                    sp.setAttributes(attributes);
-                    result.addRenderable(sp);
+                ArrayList<LatLon> pos = new ArrayList<LatLon>();
+                for (int i = 0; i < p.numPoints(); i++) {
+                    pos.add(new LatLon(Angle.fromDegrees((p.getPoint(i).y > 180) ? 180 : p.getPoint(i).y),
+                            Angle.fromDegrees((p.getPoint(i).x > 180) ? 180 : p.getPoint(i).x)));
                 }
-//            }
+                if (!pos.get(0).equals(pos.get(pos.size()-1))){
+                    pos.add(pos.get(0));
+                }
+
+                SurfacePolygon sp = new SurfacePolygon(pos);
+
+                BasicShapeAttributes attributes = new BasicShapeAttributes();
+                double intencity = 15D * rs.getDouble(2) / 20000 + 0.1;
+                if (intencity > 1)
+                    intencity = 1;
+
+                attributes.setInteriorMaterial(new Material(new Color(255, 0, 0)));
+                attributes.setInteriorOpacity(intencity);
+                attributes.setOutlineMaterial(new Material(new Color(0, 0, 0)));
+                sp.setAttributes(attributes);
+                result.addRenderable(sp);
+//                }
+            }
             stat.close();
             conn.close();
         } catch (Exception e) {
@@ -345,7 +341,7 @@ public class DataCreator {
             c.setAutoCommit(false);
 
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("select EXISTS (SELECT * \n" +
+            ResultSet rs = stmt.executeQuery("SELECT EXISTS (SELECT * \n" +
                     "FROM INFORMATION_SCHEMA.TABLES \n" +
                     "WHERE TABLE_SCHEMA = 'public' \n" +
                     "AND  TABLE_NAME = 'countries')");
@@ -367,53 +363,13 @@ public class DataCreator {
         ProcessBuilder pb = new ProcessBuilder("/bin/sh", "-c", cmd);
         try {
             Process p = pb.start();
-            BufferedReader stdInput = new BufferedReader(new
-                    InputStreamReader(p.getInputStream()));
-
-            BufferedReader stdError = new BufferedReader(new
-                    InputStreamReader(p.getErrorStream()));
-
-            String s;
             p.waitFor();
-            convertMulti();
-            // read the output from the command
-//            System.out.println("Here is the standard output of the ogr2ogr:\n");
-//            while ((s = stdInput.readLine()) != null) {
-//                System.out.println(s);
-//            }
-
-            // read any errors from the attempted command
-//            System.out.println("Here is the standard error of the ogr2ogr (if any):\n");
-//            while ((s = stdError.readLine()) != null) {
-//                System.out.println(s);
-//            }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private static void convertMulti(){
-        Connection c;
-        Statement stmt;
-        try {
-            Class.forName("org.postgresql.Driver");
-            c = DriverManager
-                    .getConnection("jdbc:postgresql://localhost:5432/postgres",
-                            "postgres", "postgres");
-            c.setAutoCommit(false);
 
-            stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("CREATE TABLE polygons_temp ( LIKE countries INCLUDING ALL );\n" +
-                    "INSERT INTO polygons_temp SELECT * (ST_Dump(wkb_geometry)).geom as the_geom from countries\n" +
-                    "DROP TABLE polygons;\n" +
-                    "ALTER TABLE polygons_temp RENAME TO countries;");
-            rs.close();
-            stmt.close();
-            c.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
 
 }

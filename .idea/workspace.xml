@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="727ade62-1fcc-4a04-8ecf-ec98a1830789" name="Default" comment="postgis error solution">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data/DataCreator.class" afterPath="$PROJECT_DIR$/target/classes/data/DataCreator.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/data/DataCreator.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ActiveFires.iml" afterPath="$PROJECT_DIR$/ActiveFires.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data/DataCreator.java" afterPath="$PROJECT_DIR$/src/main/java/data/DataCreator.java" />
     </list>
     <ignored path="ActiveFires.iws" />
@@ -45,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/app/WorldWindApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+              <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,33 +57,27 @@
       <file leaf-file-name="DataCreator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/data/DataCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0296443">
-              <caret line="405" column="0" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6264822">
+              <caret line="312" column="69" selection-start-line="312" selection-start-column="69" selection-end-line="312" selection-end-column="69" />
               <folding>
-                <marker date="1464699402000" expanded="true" signature="7144:7236" placeholder="select exist... " />
-                <marker date="1464699402000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
-                <marker date="1464699402000" expanded="true" signature="8168:8242" placeholder="SELECT disti... missingValuefire" />
-                <marker date="1464699402000" expanded="true" signature="8168:8262" placeholder="SELECT disti... missingValuefire" />
-                <marker date="1464699402000" expanded="true" signature="8588:8819" placeholder="select ST_Co... missingValuefire" />
-                <marker date="1464699402000" expanded="true" signature="8634:8740" placeholder="select ST_Co... modisfire" />
-                <marker date="1464699402000" expanded="true" signature="8864:8871" placeholder="select ST_Co... missingValuefire" />
-                <marker date="1464699402000" expanded="true" signature="8864:9102" placeholder="select ST_Co... missingValuefire" />
-                <marker date="1464699402000" expanded="true" signature="8910:9014" placeholder="select ST_Co... fire" />
-                <marker date="1464699402000" expanded="true" signature="8910:9023" placeholder="select ST_Co... viirsfire" />
-                <marker date="1464699402000" expanded="true" signature="11589:11623" placeholder="select wkb_g... countries" />
-                <marker date="1464699402000" expanded="true" signature="11834:12076" placeholder="select c.wkb... countries" />
-                <marker date="1464699402000" expanded="true" signature="11834:12210" placeholder="select c.wkb... countries" />
-                <marker date="1464699402000" expanded="true" signature="14277:14284" placeholder="select exist... " />
-                <marker date="1464699402000" expanded="true" signature="14277:14473" placeholder="select EXIST... " />
-                <marker date="1464699402000" expanded="true" signature="14292:14303" placeholder="SELECT * \nm... " />
-                <marker date="1464699402000" expanded="true" signature="14292:14361" placeholder="SELECT * \nF... TABLES" />
-                <marker date="1464699402000" expanded="true" signature="14292:14415" placeholder="SELECT * \nF... TABLES" />
-                <marker date="1464699402000" expanded="true" signature="14292:14472" placeholder="SELECT * \n TABLES" />
-                <marker date="1464699402000" expanded="true" signature="16514:16573" placeholder="CREATE TABLE... polygons_temp" />
-                <marker date="1464699402000" expanded="true" signature="16601:16691" placeholder="INSERT INTO polygons_temp... " />
-                <marker date="1464699402000" expanded="true" signature="16627:16659" placeholder="SELECT * (ST... " />
-                <marker date="1464699402000" expanded="true" signature="16718:16737" placeholder="DROP TABLE p... " />
-                <marker date="1464699402000" expanded="true" signature="16765:16810" placeholder="ALTER TABLE polygons_temp... " />
+                <marker date="1464703010000" expanded="true" signature="7144:7236" placeholder="select exist... " />
+                <marker date="1464703010000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
+                <marker date="1464703010000" expanded="true" signature="8209:8440" placeholder="select ST_Co... missingValuefire" />
+                <marker date="1464703010000" expanded="true" signature="8255:8361" placeholder="select ST_Co... modisfire" />
+                <marker date="1464703010000" expanded="true" signature="8485:8492" placeholder="select ST_Co... missingValuefire" />
+                <marker date="1464703010000" expanded="true" signature="8485:8723" placeholder="select ST_Co... missingValuefire" />
+                <marker date="1464703010000" expanded="true" signature="8531:8635" placeholder="select ST_Co... fire" />
+                <marker date="1464703010000" expanded="true" signature="8531:8644" placeholder="select ST_Co... viirsfire" />
+                <marker date="1464703010000" expanded="true" signature="11381:11809" placeholder="SELECT ((ST_... countries" />
+                <marker date="1464703010000" expanded="true" signature="11387:11451" placeholder="select c.wkb... countries" />
+                <marker date="1464703010000" expanded="true" signature="11387:11809" placeholder="select c.wkb... countries" />
+                <marker date="1464703010000" expanded="true" signature="13656:13852" placeholder="SELECT EXIST... " />
+                <marker date="1464703010000" expanded="true" signature="13662:13663" placeholder="select exist... " />
+                <marker date="1464703010000" expanded="true" signature="13662:13852" placeholder="select EXIST... " />
+                <marker date="1464703010000" expanded="true" signature="13671:13682" placeholder="SELECT * \nm... " />
+                <marker date="1464703010000" expanded="true" signature="13671:13740" placeholder="SELECT * \nF... TABLES" />
+                <marker date="1464703010000" expanded="true" signature="13671:13794" placeholder="SELECT * \nF... TABLES" />
+                <marker date="1464703010000" expanded="true" signature="13671:13851" placeholder="SELECT * \n TABLES" />
               </folding>
             </state>
           </provider>
@@ -266,7 +261,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -766,12 +761,12 @@
       <workItem from="1464533606723" duration="5343000" />
       <workItem from="1464628558445" duration="5156000" />
       <workItem from="1464685337984" duration="4683000" />
-      <workItem from="1464697658019" duration="1496000" />
+      <workItem from="1464697658019" duration="4248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51202000" />
+    <option name="totallyTimeSpent" value="53954000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -825,12 +820,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/data/DataCreator.java</url>
-          <line>315</line>
+          <line>311</line>
           <properties />
-          <option name="timeStamp" value="52" />
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="53" />
+      <option name="time" value="56" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -854,30 +849,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1464699402000" expanded="true" signature="7144:7236" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8242" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8262" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8588:8819" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8634:8740" placeholder="select ST_Co... modisfire" />
-            <marker date="1464699402000" expanded="true" signature="8864:8871" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8864:9102" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9014" placeholder="select ST_Co... fire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9023" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464699402000" expanded="true" signature="11589:11623" placeholder="select wkb_g... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12076" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12210" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="14277:14284" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="14277:14473" placeholder="select EXIST... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14303" placeholder="SELECT * \nm... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14361" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14415" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14472" placeholder="SELECT * \n TABLES" />
-            <marker date="1464699402000" expanded="true" signature="16514:16573" placeholder="CREATE TABLE... polygons_temp" />
-            <marker date="1464699402000" expanded="true" signature="16601:16691" placeholder="INSERT INTO polygons_temp... " />
-            <marker date="1464699402000" expanded="true" signature="16627:16659" placeholder="SELECT * (ST... " />
-            <marker date="1464699402000" expanded="true" signature="16718:16737" placeholder="DROP TABLE p... " />
-            <marker date="1464699402000" expanded="true" signature="16765:16810" placeholder="ALTER TABLE polygons_temp... " />
+            <marker date="1464703010000" expanded="true" signature="7144:7236" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8209:8440" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8255:8361" placeholder="select ST_Co... modisfire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8492" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8723" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8635" placeholder="select ST_Co... fire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8644" placeholder="select ST_Co... viirsfire" />
+            <marker date="1464703010000" expanded="true" signature="11381:11809" placeholder="SELECT ((ST_... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11451" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11809" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="13656:13852" placeholder="SELECT EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13663" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13852" placeholder="select EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13682" placeholder="SELECT * \nm... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13740" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13794" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13851" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -905,30 +894,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="271" column="0" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
           <folding>
-            <marker date="1464699402000" expanded="true" signature="7144:7236" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8242" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8262" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8588:8819" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8634:8740" placeholder="select ST_Co... modisfire" />
-            <marker date="1464699402000" expanded="true" signature="8864:8871" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8864:9102" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9014" placeholder="select ST_Co... fire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9023" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464699402000" expanded="true" signature="11589:11623" placeholder="select wkb_g... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12076" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12210" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="14277:14284" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="14277:14473" placeholder="select EXIST... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14303" placeholder="SELECT * \nm... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14361" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14415" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14472" placeholder="SELECT * \n TABLES" />
-            <marker date="1464699402000" expanded="true" signature="16514:16573" placeholder="CREATE TABLE... polygons_temp" />
-            <marker date="1464699402000" expanded="true" signature="16601:16691" placeholder="INSERT INTO polygons_temp... " />
-            <marker date="1464699402000" expanded="true" signature="16627:16659" placeholder="SELECT * (ST... " />
-            <marker date="1464699402000" expanded="true" signature="16718:16737" placeholder="DROP TABLE p... " />
-            <marker date="1464699402000" expanded="true" signature="16765:16810" placeholder="ALTER TABLE polygons_temp... " />
+            <marker date="1464703010000" expanded="true" signature="7144:7236" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8209:8440" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8255:8361" placeholder="select ST_Co... modisfire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8492" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8723" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8635" placeholder="select ST_Co... fire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8644" placeholder="select ST_Co... viirsfire" />
+            <marker date="1464703010000" expanded="true" signature="11381:11809" placeholder="SELECT ((ST_... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11451" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11809" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="13656:13852" placeholder="SELECT EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13663" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13852" placeholder="select EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13682" placeholder="SELECT * \nm... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13740" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13794" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13851" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -982,30 +965,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1464699402000" expanded="true" signature="7144:7236" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8242" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8262" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8588:8819" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8634:8740" placeholder="select ST_Co... modisfire" />
-            <marker date="1464699402000" expanded="true" signature="8864:8871" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8864:9102" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9014" placeholder="select ST_Co... fire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9023" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464699402000" expanded="true" signature="11589:11623" placeholder="select wkb_g... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12076" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12210" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="14277:14284" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="14277:14473" placeholder="select EXIST... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14303" placeholder="SELECT * \nm... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14361" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14415" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14472" placeholder="SELECT * \n TABLES" />
-            <marker date="1464699402000" expanded="true" signature="16514:16573" placeholder="CREATE TABLE... polygons_temp" />
-            <marker date="1464699402000" expanded="true" signature="16601:16691" placeholder="INSERT INTO polygons_temp... " />
-            <marker date="1464699402000" expanded="true" signature="16627:16659" placeholder="SELECT * (ST... " />
-            <marker date="1464699402000" expanded="true" signature="16718:16737" placeholder="DROP TABLE p... " />
-            <marker date="1464699402000" expanded="true" signature="16765:16810" placeholder="ALTER TABLE polygons_temp... " />
+            <marker date="1464703010000" expanded="true" signature="7144:7236" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8209:8440" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8255:8361" placeholder="select ST_Co... modisfire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8492" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8723" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8635" placeholder="select ST_Co... fire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8644" placeholder="select ST_Co... viirsfire" />
+            <marker date="1464703010000" expanded="true" signature="11381:11809" placeholder="SELECT ((ST_... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11451" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11809" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="13656:13852" placeholder="SELECT EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13663" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13852" placeholder="select EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13682" placeholder="SELECT * \nm... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13740" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13794" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13851" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1033,30 +1010,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1464699402000" expanded="true" signature="7144:7236" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8242" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8262" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8588:8819" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8634:8740" placeholder="select ST_Co... modisfire" />
-            <marker date="1464699402000" expanded="true" signature="8864:8871" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8864:9102" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9014" placeholder="select ST_Co... fire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9023" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464699402000" expanded="true" signature="11589:11623" placeholder="select wkb_g... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12076" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12210" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="14277:14284" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="14277:14473" placeholder="select EXIST... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14303" placeholder="SELECT * \nm... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14361" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14415" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14472" placeholder="SELECT * \n TABLES" />
-            <marker date="1464699402000" expanded="true" signature="16514:16573" placeholder="CREATE TABLE... polygons_temp" />
-            <marker date="1464699402000" expanded="true" signature="16601:16691" placeholder="INSERT INTO polygons_temp... " />
-            <marker date="1464699402000" expanded="true" signature="16627:16659" placeholder="SELECT * (ST... " />
-            <marker date="1464699402000" expanded="true" signature="16718:16737" placeholder="DROP TABLE p... " />
-            <marker date="1464699402000" expanded="true" signature="16765:16810" placeholder="ALTER TABLE polygons_temp... " />
+            <marker date="1464703010000" expanded="true" signature="7144:7236" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8209:8440" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8255:8361" placeholder="select ST_Co... modisfire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8492" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8723" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8635" placeholder="select ST_Co... fire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8644" placeholder="select ST_Co... viirsfire" />
+            <marker date="1464703010000" expanded="true" signature="11381:11809" placeholder="SELECT ((ST_... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11451" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11809" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="13656:13852" placeholder="SELECT EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13663" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13852" placeholder="select EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13682" placeholder="SELECT * \nm... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13740" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13794" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13851" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1091,30 +1062,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="180" column="29" selection-start-line="180" selection-start-column="29" selection-end-line="180" selection-end-column="29" />
           <folding>
-            <marker date="1464699402000" expanded="true" signature="7144:7236" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8242" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8262" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8588:8819" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8634:8740" placeholder="select ST_Co... modisfire" />
-            <marker date="1464699402000" expanded="true" signature="8864:8871" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8864:9102" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9014" placeholder="select ST_Co... fire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9023" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464699402000" expanded="true" signature="11589:11623" placeholder="select wkb_g... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12076" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12210" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="14277:14284" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="14277:14473" placeholder="select EXIST... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14303" placeholder="SELECT * \nm... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14361" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14415" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14472" placeholder="SELECT * \n TABLES" />
-            <marker date="1464699402000" expanded="true" signature="16514:16573" placeholder="CREATE TABLE... polygons_temp" />
-            <marker date="1464699402000" expanded="true" signature="16601:16691" placeholder="INSERT INTO polygons_temp... " />
-            <marker date="1464699402000" expanded="true" signature="16627:16659" placeholder="SELECT * (ST... " />
-            <marker date="1464699402000" expanded="true" signature="16718:16737" placeholder="DROP TABLE p... " />
-            <marker date="1464699402000" expanded="true" signature="16765:16810" placeholder="ALTER TABLE polygons_temp... " />
+            <marker date="1464703010000" expanded="true" signature="7144:7236" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8209:8440" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8255:8361" placeholder="select ST_Co... modisfire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8492" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8723" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8635" placeholder="select ST_Co... fire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8644" placeholder="select ST_Co... viirsfire" />
+            <marker date="1464703010000" expanded="true" signature="11381:11809" placeholder="SELECT ((ST_... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11451" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11809" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="13656:13852" placeholder="SELECT EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13663" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13852" placeholder="select EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13682" placeholder="SELECT * \nm... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13740" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13794" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13851" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1149,30 +1114,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="180" column="29" selection-start-line="180" selection-start-column="29" selection-end-line="180" selection-end-column="29" />
           <folding>
-            <marker date="1464699402000" expanded="true" signature="7144:7236" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8242" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8262" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8588:8819" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8634:8740" placeholder="select ST_Co... modisfire" />
-            <marker date="1464699402000" expanded="true" signature="8864:8871" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8864:9102" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9014" placeholder="select ST_Co... fire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9023" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464699402000" expanded="true" signature="11589:11623" placeholder="select wkb_g... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12076" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12210" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="14277:14284" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="14277:14473" placeholder="select EXIST... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14303" placeholder="SELECT * \nm... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14361" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14415" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14472" placeholder="SELECT * \n TABLES" />
-            <marker date="1464699402000" expanded="true" signature="16514:16573" placeholder="CREATE TABLE... polygons_temp" />
-            <marker date="1464699402000" expanded="true" signature="16601:16691" placeholder="INSERT INTO polygons_temp... " />
-            <marker date="1464699402000" expanded="true" signature="16627:16659" placeholder="SELECT * (ST... " />
-            <marker date="1464699402000" expanded="true" signature="16718:16737" placeholder="DROP TABLE p... " />
-            <marker date="1464699402000" expanded="true" signature="16765:16810" placeholder="ALTER TABLE polygons_temp... " />
+            <marker date="1464703010000" expanded="true" signature="7144:7236" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8209:8440" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8255:8361" placeholder="select ST_Co... modisfire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8492" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8723" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8635" placeholder="select ST_Co... fire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8644" placeholder="select ST_Co... viirsfire" />
+            <marker date="1464703010000" expanded="true" signature="11381:11809" placeholder="SELECT ((ST_... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11451" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11809" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="13656:13852" placeholder="SELECT EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13663" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13852" placeholder="select EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13682" placeholder="SELECT * \nm... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13740" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13794" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13851" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1200,30 +1159,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="183" column="35" selection-start-line="183" selection-start-column="35" selection-end-line="183" selection-end-column="35" />
           <folding>
-            <marker date="1464699402000" expanded="true" signature="7144:7236" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8242" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8262" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8588:8819" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8634:8740" placeholder="select ST_Co... modisfire" />
-            <marker date="1464699402000" expanded="true" signature="8864:8871" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8864:9102" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9014" placeholder="select ST_Co... fire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9023" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464699402000" expanded="true" signature="11589:11623" placeholder="select wkb_g... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12076" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12210" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="14277:14284" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="14277:14473" placeholder="select EXIST... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14303" placeholder="SELECT * \nm... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14361" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14415" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14472" placeholder="SELECT * \n TABLES" />
-            <marker date="1464699402000" expanded="true" signature="16514:16573" placeholder="CREATE TABLE... polygons_temp" />
-            <marker date="1464699402000" expanded="true" signature="16601:16691" placeholder="INSERT INTO polygons_temp... " />
-            <marker date="1464699402000" expanded="true" signature="16627:16659" placeholder="SELECT * (ST... " />
-            <marker date="1464699402000" expanded="true" signature="16718:16737" placeholder="DROP TABLE p... " />
-            <marker date="1464699402000" expanded="true" signature="16765:16810" placeholder="ALTER TABLE polygons_temp... " />
+            <marker date="1464703010000" expanded="true" signature="7144:7236" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8209:8440" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8255:8361" placeholder="select ST_Co... modisfire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8492" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8723" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8635" placeholder="select ST_Co... fire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8644" placeholder="select ST_Co... viirsfire" />
+            <marker date="1464703010000" expanded="true" signature="11381:11809" placeholder="SELECT ((ST_... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11451" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11809" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="13656:13852" placeholder="SELECT EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13663" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13852" placeholder="select EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13682" placeholder="SELECT * \nm... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13740" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13794" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13851" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1251,30 +1204,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1464699402000" expanded="true" signature="7144:7236" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8242" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8262" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8588:8819" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8634:8740" placeholder="select ST_Co... modisfire" />
-            <marker date="1464699402000" expanded="true" signature="8864:8871" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8864:9102" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9014" placeholder="select ST_Co... fire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9023" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464699402000" expanded="true" signature="11589:11623" placeholder="select wkb_g... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12076" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12210" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="14277:14284" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="14277:14473" placeholder="select EXIST... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14303" placeholder="SELECT * \nm... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14361" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14415" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14472" placeholder="SELECT * \n TABLES" />
-            <marker date="1464699402000" expanded="true" signature="16514:16573" placeholder="CREATE TABLE... polygons_temp" />
-            <marker date="1464699402000" expanded="true" signature="16601:16691" placeholder="INSERT INTO polygons_temp... " />
-            <marker date="1464699402000" expanded="true" signature="16627:16659" placeholder="SELECT * (ST... " />
-            <marker date="1464699402000" expanded="true" signature="16718:16737" placeholder="DROP TABLE p... " />
-            <marker date="1464699402000" expanded="true" signature="16765:16810" placeholder="ALTER TABLE polygons_temp... " />
+            <marker date="1464703010000" expanded="true" signature="7144:7236" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8209:8440" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8255:8361" placeholder="select ST_Co... modisfire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8492" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8723" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8635" placeholder="select ST_Co... fire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8644" placeholder="select ST_Co... viirsfire" />
+            <marker date="1464703010000" expanded="true" signature="11381:11809" placeholder="SELECT ((ST_... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11451" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11809" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="13656:13852" placeholder="SELECT EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13663" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13852" placeholder="select EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13682" placeholder="SELECT * \nm... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13740" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13794" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13851" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1320,30 +1267,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
           <folding>
-            <marker date="1464699402000" expanded="true" signature="7144:7236" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8242" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8262" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8588:8819" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8634:8740" placeholder="select ST_Co... modisfire" />
-            <marker date="1464699402000" expanded="true" signature="8864:8871" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8864:9102" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9014" placeholder="select ST_Co... fire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9023" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464699402000" expanded="true" signature="11589:11623" placeholder="select wkb_g... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12076" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12210" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="14277:14284" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="14277:14473" placeholder="select EXIST... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14303" placeholder="SELECT * \nm... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14361" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14415" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14472" placeholder="SELECT * \n TABLES" />
-            <marker date="1464699402000" expanded="true" signature="16514:16573" placeholder="CREATE TABLE... polygons_temp" />
-            <marker date="1464699402000" expanded="true" signature="16601:16691" placeholder="INSERT INTO polygons_temp... " />
-            <marker date="1464699402000" expanded="true" signature="16627:16659" placeholder="SELECT * (ST... " />
-            <marker date="1464699402000" expanded="true" signature="16718:16737" placeholder="DROP TABLE p... " />
-            <marker date="1464699402000" expanded="true" signature="16765:16810" placeholder="ALTER TABLE polygons_temp... " />
+            <marker date="1464703010000" expanded="true" signature="7144:7236" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8209:8440" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8255:8361" placeholder="select ST_Co... modisfire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8492" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8723" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8635" placeholder="select ST_Co... fire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8644" placeholder="select ST_Co... viirsfire" />
+            <marker date="1464703010000" expanded="true" signature="11381:11809" placeholder="SELECT ((ST_... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11451" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11809" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="13656:13852" placeholder="SELECT EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13663" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13852" placeholder="select EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13682" placeholder="SELECT * \nm... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13740" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13794" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13851" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1371,30 +1312,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
           <folding>
-            <marker date="1464699402000" expanded="true" signature="7144:7236" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8242" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8262" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8588:8819" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8634:8740" placeholder="select ST_Co... modisfire" />
-            <marker date="1464699402000" expanded="true" signature="8864:8871" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8864:9102" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9014" placeholder="select ST_Co... fire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9023" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464699402000" expanded="true" signature="11589:11623" placeholder="select wkb_g... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12076" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12210" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="14277:14284" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="14277:14473" placeholder="select EXIST... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14303" placeholder="SELECT * \nm... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14361" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14415" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14472" placeholder="SELECT * \n TABLES" />
-            <marker date="1464699402000" expanded="true" signature="16514:16573" placeholder="CREATE TABLE... polygons_temp" />
-            <marker date="1464699402000" expanded="true" signature="16601:16691" placeholder="INSERT INTO polygons_temp... " />
-            <marker date="1464699402000" expanded="true" signature="16627:16659" placeholder="SELECT * (ST... " />
-            <marker date="1464699402000" expanded="true" signature="16718:16737" placeholder="DROP TABLE p... " />
-            <marker date="1464699402000" expanded="true" signature="16765:16810" placeholder="ALTER TABLE polygons_temp... " />
+            <marker date="1464703010000" expanded="true" signature="7144:7236" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8209:8440" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8255:8361" placeholder="select ST_Co... modisfire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8492" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8723" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8635" placeholder="select ST_Co... fire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8644" placeholder="select ST_Co... viirsfire" />
+            <marker date="1464703010000" expanded="true" signature="11381:11809" placeholder="SELECT ((ST_... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11451" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11809" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="13656:13852" placeholder="SELECT EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13663" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13852" placeholder="select EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13682" placeholder="SELECT * \nm... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13740" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13794" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13851" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1440,30 +1375,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
-            <marker date="1464699402000" expanded="true" signature="7144:7236" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8242" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8262" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8588:8819" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8634:8740" placeholder="select ST_Co... modisfire" />
-            <marker date="1464699402000" expanded="true" signature="8864:8871" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8864:9102" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9014" placeholder="select ST_Co... fire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9023" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464699402000" expanded="true" signature="11589:11623" placeholder="select wkb_g... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12076" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12210" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="14277:14284" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="14277:14473" placeholder="select EXIST... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14303" placeholder="SELECT * \nm... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14361" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14415" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14472" placeholder="SELECT * \n TABLES" />
-            <marker date="1464699402000" expanded="true" signature="16514:16573" placeholder="CREATE TABLE... polygons_temp" />
-            <marker date="1464699402000" expanded="true" signature="16601:16691" placeholder="INSERT INTO polygons_temp... " />
-            <marker date="1464699402000" expanded="true" signature="16627:16659" placeholder="SELECT * (ST... " />
-            <marker date="1464699402000" expanded="true" signature="16718:16737" placeholder="DROP TABLE p... " />
-            <marker date="1464699402000" expanded="true" signature="16765:16810" placeholder="ALTER TABLE polygons_temp... " />
+            <marker date="1464703010000" expanded="true" signature="7144:7236" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8209:8440" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8255:8361" placeholder="select ST_Co... modisfire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8492" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8723" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8635" placeholder="select ST_Co... fire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8644" placeholder="select ST_Co... viirsfire" />
+            <marker date="1464703010000" expanded="true" signature="11381:11809" placeholder="SELECT ((ST_... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11451" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11809" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="13656:13852" placeholder="SELECT EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13663" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13852" placeholder="select EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13682" placeholder="SELECT * \nm... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13740" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13794" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13851" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1531,7 +1460,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/app/WorldWindApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1540,33 +1469,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/data/DataCreator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0296443">
-          <caret line="405" column="0" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6264822">
+          <caret line="312" column="69" selection-start-line="312" selection-start-column="69" selection-end-line="312" selection-end-column="69" />
           <folding>
-            <marker date="1464699402000" expanded="true" signature="7144:7236" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8242" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8168:8262" placeholder="SELECT disti... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8588:8819" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8634:8740" placeholder="select ST_Co... modisfire" />
-            <marker date="1464699402000" expanded="true" signature="8864:8871" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8864:9102" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9014" placeholder="select ST_Co... fire" />
-            <marker date="1464699402000" expanded="true" signature="8910:9023" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464699402000" expanded="true" signature="11589:11623" placeholder="select wkb_g... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12076" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="11834:12210" placeholder="select c.wkb... countries" />
-            <marker date="1464699402000" expanded="true" signature="14277:14284" placeholder="select exist... " />
-            <marker date="1464699402000" expanded="true" signature="14277:14473" placeholder="select EXIST... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14303" placeholder="SELECT * \nm... " />
-            <marker date="1464699402000" expanded="true" signature="14292:14361" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14415" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464699402000" expanded="true" signature="14292:14472" placeholder="SELECT * \n TABLES" />
-            <marker date="1464699402000" expanded="true" signature="16514:16573" placeholder="CREATE TABLE... polygons_temp" />
-            <marker date="1464699402000" expanded="true" signature="16601:16691" placeholder="INSERT INTO polygons_temp... " />
-            <marker date="1464699402000" expanded="true" signature="16627:16659" placeholder="SELECT * (ST... " />
-            <marker date="1464699402000" expanded="true" signature="16718:16737" placeholder="DROP TABLE p... " />
-            <marker date="1464699402000" expanded="true" signature="16765:16810" placeholder="ALTER TABLE polygons_temp... " />
+            <marker date="1464703010000" expanded="true" signature="7144:7236" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="7158:7223" placeholder="select 1 fro... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8209:8440" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8255:8361" placeholder="select ST_Co... modisfire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8492" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8485:8723" placeholder="select ST_Co... missingValuefire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8635" placeholder="select ST_Co... fire" />
+            <marker date="1464703010000" expanded="true" signature="8531:8644" placeholder="select ST_Co... viirsfire" />
+            <marker date="1464703010000" expanded="true" signature="11381:11809" placeholder="SELECT ((ST_... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11451" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="11387:11809" placeholder="select c.wkb... countries" />
+            <marker date="1464703010000" expanded="true" signature="13656:13852" placeholder="SELECT EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13663" placeholder="select exist... " />
+            <marker date="1464703010000" expanded="true" signature="13662:13852" placeholder="select EXIST... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13682" placeholder="SELECT * \nm... " />
+            <marker date="1464703010000" expanded="true" signature="13671:13740" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13794" placeholder="SELECT * \nF... TABLES" />
+            <marker date="1464703010000" expanded="true" signature="13671:13851" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
