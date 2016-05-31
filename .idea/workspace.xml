@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="727ade62-1fcc-4a04-8ecf-ec98a1830789" name="Default" comment="postgis error solution">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/app/ShapefileLoader.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data/DataCreator.java" afterPath="$PROJECT_DIR$/src/main/java/data/DataCreator.java" />
     </list>
     <ignored path="ActiveFires.iws" />
@@ -41,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WorldWindApplication.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WorldWindApplication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/WorldWindApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.4743083">
+              <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,31 +51,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataCreator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DataCreator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/data/DataCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.243083">
-              <caret line="106" column="24" selection-start-line="106" selection-start-column="24" selection-end-line="106" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="364" column="41" selection-start-line="364" selection-start-column="41" selection-end-line="364" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1464704281000" expanded="true" signature="6408:6500" placeholder="select exist... " />
-                <marker date="1464704281000" expanded="true" signature="6422:6487" placeholder="select 1 fro... missingValuefire" />
-                <marker date="1464704281000" expanded="true" signature="7443:7674" placeholder="select ST_Co... missingValuefire" />
-                <marker date="1464704281000" expanded="true" signature="7489:7595" placeholder="select ST_Co... modisfire" />
-                <marker date="1464704281000" expanded="true" signature="7719:7726" placeholder="select ST_Co... missingValuefire" />
-                <marker date="1464704281000" expanded="true" signature="7719:7957" placeholder="select ST_Co... missingValuefire" />
-                <marker date="1464704281000" expanded="true" signature="7765:7869" placeholder="select ST_Co... fire" />
-                <marker date="1464704281000" expanded="true" signature="7765:7878" placeholder="select ST_Co... viirsfire" />
-                <marker date="1464704281000" expanded="true" signature="10615:11043" placeholder="SELECT ((ST_... countries" />
-                <marker date="1464704281000" expanded="true" signature="10621:10685" placeholder="select c.wkb... countries" />
-                <marker date="1464704281000" expanded="true" signature="10621:11043" placeholder="select c.wkb... countries" />
-                <marker date="1464704281000" expanded="true" signature="12890:13086" placeholder="SELECT EXIST... " />
-                <marker date="1464704281000" expanded="true" signature="12896:12897" placeholder="select exist... " />
-                <marker date="1464704281000" expanded="true" signature="12896:13086" placeholder="select EXIST... " />
-                <marker date="1464704281000" expanded="true" signature="12905:12916" placeholder="SELECT * \nm... " />
-                <marker date="1464704281000" expanded="true" signature="12905:12974" placeholder="SELECT * \nF... TABLES" />
-                <marker date="1464704281000" expanded="true" signature="12905:13028" placeholder="SELECT * \nF... TABLES" />
-                <marker date="1464704281000" expanded="true" signature="12905:13085" placeholder="SELECT * \n TABLES" />
               </folding>
             </state>
           </provider>
@@ -775,16 +755,16 @@
       <workItem from="1464533606723" duration="5343000" />
       <workItem from="1464628558445" duration="5156000" />
       <workItem from="1464685337984" duration="4683000" />
-      <workItem from="1464697658019" duration="5308000" />
+      <workItem from="1464697658019" duration="11279000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55014000" />
+    <option name="totallyTimeSpent" value="60985000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -796,8 +776,9 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33582088" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25679544" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25679544" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -808,7 +789,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925373" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -831,15 +811,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/data/DataCreator.java</url>
-          <line>294</line>
-          <properties />
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="56" />
+      <option name="time" value="60" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -864,24 +836,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1464704281000" expanded="true" signature="6408:6500" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="6422:6487" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7443:7674" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7489:7595" placeholder="select ST_Co... modisfire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7726" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7957" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7869" placeholder="select ST_Co... fire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7878" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464704281000" expanded="true" signature="10615:11043" placeholder="SELECT ((ST_... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:10685" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:11043" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="12890:13086" placeholder="SELECT EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12896:12897" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="12896:13086" placeholder="select EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12916" placeholder="SELECT * \nm... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12974" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13028" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13085" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -910,24 +864,6 @@
           <caret line="271" column="0" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1464704281000" expanded="true" signature="6408:6500" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="6422:6487" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7443:7674" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7489:7595" placeholder="select ST_Co... modisfire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7726" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7957" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7869" placeholder="select ST_Co... fire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7878" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464704281000" expanded="true" signature="10615:11043" placeholder="SELECT ((ST_... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:10685" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:11043" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="12890:13086" placeholder="SELECT EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12896:12897" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="12896:13086" placeholder="select EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12916" placeholder="SELECT * \nm... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12974" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13028" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13085" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -982,24 +918,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1464704281000" expanded="true" signature="6408:6500" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="6422:6487" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7443:7674" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7489:7595" placeholder="select ST_Co... modisfire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7726" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7957" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7869" placeholder="select ST_Co... fire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7878" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464704281000" expanded="true" signature="10615:11043" placeholder="SELECT ((ST_... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:10685" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:11043" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="12890:13086" placeholder="SELECT EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12896:12897" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="12896:13086" placeholder="select EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12916" placeholder="SELECT * \nm... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12974" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13028" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13085" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1028,24 +946,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1464704281000" expanded="true" signature="6408:6500" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="6422:6487" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7443:7674" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7489:7595" placeholder="select ST_Co... modisfire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7726" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7957" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7869" placeholder="select ST_Co... fire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7878" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464704281000" expanded="true" signature="10615:11043" placeholder="SELECT ((ST_... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:10685" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:11043" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="12890:13086" placeholder="SELECT EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12896:12897" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="12896:13086" placeholder="select EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12916" placeholder="SELECT * \nm... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12974" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13028" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13085" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1081,24 +981,6 @@
           <caret line="180" column="29" selection-start-line="180" selection-start-column="29" selection-end-line="180" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1464704281000" expanded="true" signature="6408:6500" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="6422:6487" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7443:7674" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7489:7595" placeholder="select ST_Co... modisfire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7726" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7957" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7869" placeholder="select ST_Co... fire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7878" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464704281000" expanded="true" signature="10615:11043" placeholder="SELECT ((ST_... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:10685" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:11043" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="12890:13086" placeholder="SELECT EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12896:12897" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="12896:13086" placeholder="select EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12916" placeholder="SELECT * \nm... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12974" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13028" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13085" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1134,24 +1016,6 @@
           <caret line="180" column="29" selection-start-line="180" selection-start-column="29" selection-end-line="180" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1464704281000" expanded="true" signature="6408:6500" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="6422:6487" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7443:7674" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7489:7595" placeholder="select ST_Co... modisfire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7726" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7957" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7869" placeholder="select ST_Co... fire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7878" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464704281000" expanded="true" signature="10615:11043" placeholder="SELECT ((ST_... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:10685" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:11043" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="12890:13086" placeholder="SELECT EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12896:12897" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="12896:13086" placeholder="select EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12916" placeholder="SELECT * \nm... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12974" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13028" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13085" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1180,24 +1044,6 @@
           <caret line="183" column="35" selection-start-line="183" selection-start-column="35" selection-end-line="183" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1464704281000" expanded="true" signature="6408:6500" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="6422:6487" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7443:7674" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7489:7595" placeholder="select ST_Co... modisfire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7726" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7957" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7869" placeholder="select ST_Co... fire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7878" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464704281000" expanded="true" signature="10615:11043" placeholder="SELECT ((ST_... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:10685" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:11043" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="12890:13086" placeholder="SELECT EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12896:12897" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="12896:13086" placeholder="select EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12916" placeholder="SELECT * \nm... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12974" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13028" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13085" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1226,24 +1072,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1464704281000" expanded="true" signature="6408:6500" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="6422:6487" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7443:7674" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7489:7595" placeholder="select ST_Co... modisfire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7726" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7957" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7869" placeholder="select ST_Co... fire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7878" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464704281000" expanded="true" signature="10615:11043" placeholder="SELECT ((ST_... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:10685" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:11043" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="12890:13086" placeholder="SELECT EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12896:12897" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="12896:13086" placeholder="select EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12916" placeholder="SELECT * \nm... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12974" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13028" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13085" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1290,24 +1118,6 @@
           <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1464704281000" expanded="true" signature="6408:6500" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="6422:6487" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7443:7674" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7489:7595" placeholder="select ST_Co... modisfire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7726" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7957" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7869" placeholder="select ST_Co... fire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7878" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464704281000" expanded="true" signature="10615:11043" placeholder="SELECT ((ST_... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:10685" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:11043" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="12890:13086" placeholder="SELECT EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12896:12897" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="12896:13086" placeholder="select EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12916" placeholder="SELECT * \nm... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12974" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13028" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13085" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1336,24 +1146,6 @@
           <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1464704281000" expanded="true" signature="6408:6500" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="6422:6487" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7443:7674" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7489:7595" placeholder="select ST_Co... modisfire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7726" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7957" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7869" placeholder="select ST_Co... fire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7878" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464704281000" expanded="true" signature="10615:11043" placeholder="SELECT ((ST_... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:10685" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:11043" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="12890:13086" placeholder="SELECT EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12896:12897" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="12896:13086" placeholder="select EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12916" placeholder="SELECT * \nm... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12974" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13028" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13085" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1400,24 +1192,6 @@
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1464704281000" expanded="true" signature="6408:6500" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="6422:6487" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7443:7674" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7489:7595" placeholder="select ST_Co... modisfire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7726" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7957" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7869" placeholder="select ST_Co... fire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7878" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464704281000" expanded="true" signature="10615:11043" placeholder="SELECT ((ST_... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:10685" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:11043" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="12890:13086" placeholder="SELECT EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12896:12897" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="12896:13086" placeholder="select EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12916" placeholder="SELECT * \nm... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12974" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13028" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13085" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>
@@ -1434,13 +1208,6 @@
         <state vertical-scroll-proportion="5.721344">
           <caret line="231" column="11" selection-start-line="231" selection-start-column="11" selection-end-line="231" selection-end-column="11" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/Unsafe.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.769231">
-          <caret line="354" column="23" selection-start-line="354" selection-start-column="23" selection-end-line="354" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -1475,40 +1242,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/WorldWindApplication.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/Unsafe.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7832168">
+          <caret line="354" column="23" selection-start-line="354" selection-start-column="23" selection-end-line="354" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/DataCreator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
+          <caret line="364" column="41" selection-start-line="364" selection-start-column="41" selection-end-line="364" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/DataCreator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/WorldWindApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.243083">
-          <caret line="106" column="24" selection-start-line="106" selection-start-column="24" selection-end-line="106" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.4743083">
+          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1464704281000" expanded="true" signature="6408:6500" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="6422:6487" placeholder="select 1 fro... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7443:7674" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7489:7595" placeholder="select ST_Co... modisfire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7726" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7719:7957" placeholder="select ST_Co... missingValuefire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7869" placeholder="select ST_Co... fire" />
-            <marker date="1464704281000" expanded="true" signature="7765:7878" placeholder="select ST_Co... viirsfire" />
-            <marker date="1464704281000" expanded="true" signature="10615:11043" placeholder="SELECT ((ST_... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:10685" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="10621:11043" placeholder="select c.wkb... countries" />
-            <marker date="1464704281000" expanded="true" signature="12890:13086" placeholder="SELECT EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12896:12897" placeholder="select exist... " />
-            <marker date="1464704281000" expanded="true" signature="12896:13086" placeholder="select EXIST... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12916" placeholder="SELECT * \nm... " />
-            <marker date="1464704281000" expanded="true" signature="12905:12974" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13028" placeholder="SELECT * \nF... TABLES" />
-            <marker date="1464704281000" expanded="true" signature="12905:13085" placeholder="SELECT * \n TABLES" />
           </folding>
         </state>
       </provider>

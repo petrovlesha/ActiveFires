@@ -122,7 +122,7 @@ public class DataCreator {
         String zipfile = satname + ".zip";
         String url;
         String shapefile;
-        if (satname == "modis") {
+        if (satname.equals("modis")) {
             if (days == 1) {
                 url = "https://firms.modaps.eosdis.nasa.gov/active_fire/c6/shapes/zips/MODIS_C6_Global_24h.zip";
                 shapefile = "MODIS_C6_Global_24h.shp";
@@ -155,6 +155,7 @@ public class DataCreator {
         System.out.println("Unziped");
         File shp = new File(satname, shapefile);
         DataCreator.shpToDb(shp, satname);
+        writeReport(satname,days);
         System.out.println("Pushed to DB");
         (new File(zipfile)).delete();
         try {
@@ -168,7 +169,7 @@ public class DataCreator {
     public static boolean isUpToDate(String satname, int days) {
         Connection c;
         Statement stmt;
-        boolean result = false;
+        boolean result;
         try {
             Class.forName("org.postgresql.Driver");
             c = DriverManager
@@ -177,7 +178,8 @@ public class DataCreator {
             c.setAutoCommit(false);
 
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("select exists(select 1 from " + satname + "fire where current_date <= acq_date+" + days + ");");
+            ResultSet rs = stmt.executeQuery(String.format("select exists(select 1 from buffer " +
+                    "where current_date <= acq_date and satname='%s' and days=%d);", satname, days));
             rs.next();
             result = rs.getBoolean(1);
 
@@ -205,20 +207,18 @@ public class DataCreator {
             Statement stat = conn.createStatement();
 
             String query ;
-            if (satname == "modis")
-                query = "select gc from\n" +
-                        "(select ST_ConvexHull(unnest(ST_ClusterWithin(wkb_geometry, 0.6))) as gc from modisfire where confidence>50) f\n" +
-                        "where not (st_area(gc)>0 and st_area(gc)<0.1)";
+            if (satname.equals("modis"))
+                query = String.format("select gc from (select ST_ConvexHull(unnest(ST_ClusterWithin(wkb_geometry, 0.6))) as gc " +
+                        "from modisfire where confidence>50) f where not (st_area(gc)>0 and st_area(gc)<0.1)");
             else
-                query = "select gc from\n" +
-                        "(select ST_ConvexHull(unnest(ST_ClusterWithin(wkb_geometry, 0.6))) as gc from viirsfire where confidence='nominal') f\n" +
-                        "where not (st_area(gc)>0 and st_area(gc)<0.1)";
+                query = String.format("select gc from (select ST_ConvexHull(unnest(ST_ClusterWithin(wkb_geometry, 0.6))) as gc " +
+                        "from viirsfire where confidence='nominal') f where not (st_area(gc)>0 and st_area(gc)<0.1)");
             ResultSet rs = stat.executeQuery(query);
 
             while (rs.next()) {
                 Geometry geom = ((PGgeometry) rs.getObject(1)).getGeometry();
                 String s = geom.getTypeString();
-                if (s == "POLYGON") {
+                if (s.equals("POLYGON")) {
                     ArrayList<LatLon> pos = new ArrayList<LatLon>();
                     for (int i = 0; i < geom.numPoints(); i++) {
                         pos.add(new LatLon(Angle.fromDegrees(geom.getPoint(i).y), Angle.fromDegrees(geom.getPoint(i).x)));
@@ -233,14 +233,14 @@ public class DataCreator {
                     sp.setAttributes(attributes);
                     result.addRenderable(sp);
                 }
-                if (s == "POINT") {
+                if (s.equals("POINT")) {
                     PointPlacemark p = new PointPlacemark(Position.fromDegrees(
                             ((Point) geom).y, ((Point) geom).x
                     ));
                     p.setAttributes(ppattributes);
                     result.addRenderable(p);
                 }
-                if (s == "LINESTRING") {
+                if (s.equals("LINESTRING")) {
                     for (int i = 0; i < geom.numPoints(); i++) {
                         PointPlacemark p = new PointPlacemark(Position.fromDegrees(
                                 geom.getPoint(i).y, geom.getPoint(i).x
@@ -268,16 +268,15 @@ public class DataCreator {
             Statement stat = conn.createStatement();
 
             String confidence;
-            if (satname == "modis")
+            if (satname.equals("modis"))
                 confidence = ">50";
             else
                 confidence = "=nominal";
-            rs = stat.executeQuery("SELECT ((ST_Dump(c.wkb_geometry)).geom)::geometry(Polygon,4326) geom, COUNT(DISTINCT m.wkb_geometry) \n" +
-                    "FROM countries c LEFT JOIN "+ satname +"fire m \n" +
-                    "ON ST_Contains(c.wkb_geometry, m.wkb_geometry) \n" +
-                    "WHERE confidence" + confidence + " " +
-                    "GROUP BY c.wkb_geometry\n" +
-                    "HAVING COUNT(DISTINCT m.wkb_geometry)  > 0");
+            rs = stat.executeQuery(String.format("SELECT ((ST_Dump(ST_Buffer(c.wkb_geometry,0.0))).geom)::geometry(Polygon,4326) geom, " +
+                    "COUNT(DISTINCT m.wkb_geometry) FROM countries c LEFT JOIN %sfire m " +
+                    "ON ST_Contains(c.wkb_geometry, m.wkb_geometry) " +
+                    "WHERE confidence%s GROUP BY c.wkb_geometry " +
+                    "HAVING COUNT(DISTINCT m.wkb_geometry)  > 0", satname, confidence));
 
             while (rs.next()) {
                 Polygon p = (Polygon) ((PGgeometry) rs.getObject(1)).getGeometry();
@@ -286,23 +285,19 @@ public class DataCreator {
                     pos.add(new LatLon(Angle.fromDegrees((p.getPoint(i).y > 180) ? 180 : p.getPoint(i).y),
                             Angle.fromDegrees((p.getPoint(i).x > 180) ? 180 : p.getPoint(i).x)));
                 }
-                if (!pos.get(0).equals(pos.get(pos.size()-1))){
-                    pos.add(pos.get(0));
-                }
 
                 SurfacePolygon sp = new SurfacePolygon(pos);
 
                 BasicShapeAttributes attributes = new BasicShapeAttributes();
-                double intencity = 15D * rs.getDouble(2) / 20000 + 0.1;
-                if (intencity > 1)
-                    intencity = 1;
+                double intencity =  rs.getDouble(2) / 2000 + 0.1;
+                if (intencity > 0.8)
+                    intencity = 0.8;
 
                 attributes.setInteriorMaterial(new Material(new Color(255, 0, 0)));
                 attributes.setInteriorOpacity(intencity);
                 attributes.setOutlineMaterial(new Material(new Color(0, 0, 0)));
                 sp.setAttributes(attributes);
                 result.addRenderable(sp);
-//                }
             }
             stat.close();
             conn.close();
@@ -315,7 +310,6 @@ public class DataCreator {
     public static void checkCountries(){
         Connection c;
         Statement stmt;
-        boolean result = false;
         try {
             Class.forName("org.postgresql.Driver");
             c = DriverManager
@@ -324,17 +318,17 @@ public class DataCreator {
             c.setAutoCommit(false);
 
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT EXISTS (SELECT * \n" +
-                    "FROM INFORMATION_SCHEMA.TABLES \n" +
-                    "WHERE TABLE_SCHEMA = 'public' \n" +
-                    "AND  TABLE_NAME = 'countries')");
+            ResultSet rs = stmt.executeQuery(String.format("SELECT EXISTS (SELECT * " +
+                    "FROM INFORMATION_SCHEMA.TABLES " +
+                    "WHERE TABLE_SCHEMA = 'public' " +
+                    "AND  TABLE_NAME = 'countries')"));
             rs.next();
-            result = rs.getBoolean(1);
-            if (!result)
-                createCountries();
+            boolean result = rs.getBoolean(1);
             rs.close();
             stmt.close();
             c.close();
+            if (!result)
+                createCountries();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -352,6 +346,31 @@ public class DataCreator {
         }
     }
 
+
+    private static void writeReport(String satname, int days){
+        Connection c;
+        Statement stmt;
+        try {
+            Class.forName("org.postgresql.Driver");
+            c = DriverManager
+                    .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            "postgres", "postgres");
+            c.setAutoCommit(false);
+
+            stmt = c.createStatement();
+            String query = String.format("INSERT INTO public.buffer(" +
+                    "satname, days, acq_date) " +
+                    "VALUES ('%s', %d, current_date)" +
+                    "ON CONFLICT (satname) DO UPDATE SET " +
+                    "days = %d, acq_date = current_date;", satname, days, days);
+
+            stmt.executeUpdate(query);
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
 
