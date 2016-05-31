@@ -2,6 +2,7 @@ package app;
 
 import data.DataCreator;
 import gov.nasa.worldwind.BasicModel;
+import gov.nasa.worldwind.Configuration;
 import gov.nasa.worldwind.awt.WorldWindowGLCanvas;
 import gov.nasa.worldwind.layers.Layer;
 import gov.nasa.worldwind.layers.RenderableLayer;
@@ -96,7 +97,7 @@ public class WorldWindApplication {
 
         refresh.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                update();
+                new DownloadWorker().execute();
             }
         });
 
@@ -110,7 +111,13 @@ public class WorldWindApplication {
 
         frame.pack();
         frame.setVisible(true);
-
+        if (Configuration.isMacOS())
+        {
+            System.setProperty("apple.laf.useScreenMenuBar", "true");
+            System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Active Fires");
+            System.setProperty("com.apple.mrj.application.growbox.intrudes", "false");
+        }
+        DataCreator.checkCountries();
     }
 
     public void update() {
@@ -122,12 +129,14 @@ public class WorldWindApplication {
             days = 2;
         else if (sevendays.isSelected())
             days = 7;
+
         DataCreator.downloadAndUpdate(satname, days);
         RenderableLayer l;
         if (countries.isSelected())
             l = DataCreator.getFireCountries(satname);
         else
             l = DataCreator.getPointsLayer(satname);
+
         Layer last = wwd.getModel().getLayers().getLayerByName("countries");
         if (last != null)
             wwd.getModel().getLayers().remove(last);
@@ -135,5 +144,23 @@ public class WorldWindApplication {
         if (last != null)
             wwd.getModel().getLayers().remove(last);
         wwd.getModel().getLayers().add(l);
+        System.out.println("Draw");
+    }
+
+    class DownloadWorker extends SwingWorker<Void, Void>{
+
+        @Override
+        protected Void doInBackground() throws Exception {
+            frame.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            update();
+            return null;
+        }
+
+        @Override
+        protected void done(){
+            frame.setCursor(Cursor.getDefaultCursor());
+        }
     }
 }
+
+

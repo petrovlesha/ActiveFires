@@ -6,10 +6,7 @@ import gov.nasa.worldwind.geom.Position;
 import gov.nasa.worldwind.layers.RenderableLayer;
 import gov.nasa.worldwind.render.*;
 import org.apache.commons.io.FileUtils;
-import org.postgis.Geometry;
-import org.postgis.PGgeometry;
-import org.postgis.Point;
-import org.postgis.Polygon;
+import org.postgis.*;
 
 import java.awt.*;
 import java.io.*;
@@ -23,6 +20,7 @@ import java.util.ArrayList;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+import org.postgis.Point;
 import org.postgis.Polygon;
 
 public class DataCreator {
@@ -101,37 +99,35 @@ public class DataCreator {
     }
 
     public static void shpToDb(File shp, String satname) {
-//        -s_srs EPSG:4326 -t_srs EPSG:4326
-//        String cmd = "shp2pgsql -s 4326 -d " + shp.getAbsolutePath() + " public."+satname+"fire | psql -h localhost -d postgres -U postgres";
         String cmd = "ogr2ogr -skipfailures -overwrite -f \"PostgreSQL\" PG:\"host=localhost user=postgres dbname=postgres password=postgres\"" +
                 " " + shp.getAbsolutePath() + " -nln public." + satname + "fire";
         ProcessBuilder pb = new ProcessBuilder("/bin/sh", "-c", cmd);
         try {
             Process p = pb.start();
-//            int val = p.waitFor();
             BufferedReader stdInput = new BufferedReader(new
                     InputStreamReader(p.getInputStream()));
 
             BufferedReader stdError = new BufferedReader(new
                     InputStreamReader(p.getErrorStream()));
 
-//            String s;
-//            // read the output from the command
-//            System.out.println("Here is the standard output of the command:\n");
-////            while ((s = stdInput.readLine()) != null) {
-////                System.out.println(s);
-////            }
-//
-//            // read any errors from the attempted command
-//            System.out.println("Here is the standard error of the command (if any):\n");
-//            while ((s = stdError.readLine()) != null) {
-//                System.out.println(s);
-//            }
-//            System.out.println("Exec "+p.waitFor());
+            String s;
+//             read the output from the command
+            System.out.println("Here is the standard output of the ogr2ogr:\n");
+            while ((s = stdInput.readLine()) != null) {
+                System.out.println(s);
+            }
+
+//             read any errors from the attempted command
+            System.out.println("Here is the standard error of the ogr2ogr (if any):\n");
+            while ((s = stdError.readLine()) != null) {
+                System.out.println(s);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
 
     public static void downloadAndUpdate(String satname, int days) {
         if (isUpToDate(satname, days)) {
@@ -187,8 +183,8 @@ public class DataCreator {
     }
 
     public static boolean isUpToDate(String satname, int days) {
-        Connection c = null;
-        Statement stmt = null;
+        Connection c;
+        Statement stmt;
         boolean result = false;
         try {
             Class.forName("org.postgresql.Driver");
@@ -224,12 +220,20 @@ public class DataCreator {
             String dburl = "jdbc:postgresql://localhost/postgres";
             Connection conn = DriverManager.getConnection(dburl, "postgres", "postgres");
             Statement stat = conn.createStatement();
-//            ResultSet rs = stat.executeQuery("select st_x(s),st_y(s) from\n" +
-//                    "(SELECT  distinct ST_SnapToGrid(wkb_geometry,0.1) as s from "+satname+"fire) x");
+//            ResultSet rs = stat.executeQuery("SELECT distinct ST_SnapToGrid(wkb_geometry,0.01) as s from "+satname+"fire where confidence>80");
 //            ResultSet rs = stat.executeQuery("select st_x(ST_Centroid(gc)),st_y(ST_Centroid(gc)), ST_NumGeometries(gc) " +
 //                    "from (select unnest(ST_ClusterWithin(wkb_geometry, 1)) gc from "+satname+"fire) f");
 
-            ResultSet rs = stat.executeQuery("select ST_ConcaveHull(unnest(ST_ClusterWithin(wkb_geometry, 1)),0.9) gc from " + satname + "fire");
+            String query ;
+            if (satname == "modis")
+                query = "select gc from\n" +
+                        "(select ST_ConvexHull(unnest(ST_ClusterWithin(wkb_geometry, 0.6))) as gc from modisfire where confidence>50) f\n" +
+                        "where not (st_area(gc)>0 and st_area(gc)<0.1)";
+            else
+                query = "select gc from\n" +
+                        "(select ST_ConvexHull(unnest(ST_ClusterWithin(wkb_geometry, 0.6))) as gc from viirsfire where confidence='nominal') f\n" +
+                        "where not (st_area(gc)>0 and st_area(gc)<0.1)";
+            ResultSet rs = stat.executeQuery(query);
 
             while (rs.next()) {
                 Geometry geom = ((PGgeometry) rs.getObject(1)).getGeometry();
@@ -279,34 +283,43 @@ public class DataCreator {
         result.setName("countries");
         try {
             String dburl = "jdbc:postgresql://localhost/postgres";
-            Connection conn = DriverManager.getConnection(dburl, "postgres", "246345");
+            Connection conn = DriverManager.getConnection(dburl, "postgres", "postgres");
             Statement stat = conn.createStatement();
 
-            ResultSet rs = stat.executeQuery("select c.wkb_geometry, count(distinct m.wkb_geometry), avg(c.area) " +
+//            ResultSet rs = stat.executeQuery("select wkb_geometry from countries");
+            String confidence;
+            if (satname == "modis")
+                confidence = ">50";
+            else
+                confidence = "=nominal";
+            ResultSet rs = stat.executeQuery("select c.wkb_geometry, count(distinct m.wkb_geometry) " +
                     "from countries c left join " + satname + "fire m\n" +
-                    "on st_contains(c.wkb_geometry, m.wkb_geometry)\n" +
+                    "on st_contains(c.wkb_geometry, m.wkb_geometry) " +
+                    "where confidence" + confidence +" " +
                     "group by c.wkb_geometry\n" +
                     "having count(distinct m.wkb_geometry) > 0\n");
 
             while (rs.next()) {
                 Polygon p = (Polygon) ((PGgeometry) rs.getObject(1)).getGeometry();
-                ArrayList<LatLon> pos = new ArrayList<LatLon>();
-                for (int i = 0; i < p.numPoints(); i++) {
-                    pos.add(new LatLon(Angle.fromDegrees((p.getPoint(i).y > 180) ? 180 : p.getPoint(i).y),
-                            Angle.fromDegrees((p.getPoint(i).x > 180) ? 180 : p.getPoint(i).x)));
-                }
-                SurfacePolygon sp = new SurfacePolygon(pos);
+//                for (Polygon p : mp.getPolygons()) {
+                    ArrayList<LatLon> pos = new ArrayList<LatLon>();
+                    for (int i = 0; i < p.numPoints(); i++) {
+                        pos.add(new LatLon(Angle.fromDegrees((p.getPoint(i).y > 180) ? 180 : p.getPoint(i).y),
+                                Angle.fromDegrees((p.getPoint(i).x > 180) ? 180 : p.getPoint(i).x)));
+                    }
+                    SurfacePolygon sp = new SurfacePolygon(pos);
 
-                BasicShapeAttributes attributes = new BasicShapeAttributes();
-                double intencity = 15D * rs.getDouble(2) / rs.getDouble(3) + 0.1;
-                if (intencity > 1)
-                    intencity = 1;
+                    BasicShapeAttributes attributes = new BasicShapeAttributes();
+//                    double intencity = 15D * rs.getDouble(2) / rs.getDouble(3) + 0.1;
+//                    if (intencity > 1)
+//                        intencity = 1;
 
-                attributes.setInteriorMaterial(new Material(new Color(255, 0, 0)));
-                attributes.setInteriorOpacity(intencity);
-                attributes.setOutlineMaterial(new Material(new Color(255, 0, 0)));
-                sp.setAttributes(attributes);
-                result.addRenderable(sp);
+                    attributes.setInteriorMaterial(new Material(new Color(255, 0, 0)));
+                    attributes.setInteriorOpacity(0.1);
+                    attributes.setOutlineMaterial(new Material(new Color(255, 0, 0)));
+                    sp.setAttributes(attributes);
+                    result.addRenderable(sp);
+//                }
             }
             stat.close();
             conn.close();
@@ -315,5 +328,63 @@ public class DataCreator {
         }
         return result;
     }
+
+    public static void checkCountries(){
+        Connection c;
+        Statement stmt;
+        boolean result = false;
+        try {
+            Class.forName("org.postgresql.Driver");
+            c = DriverManager
+                    .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            "postgres", "postgres");
+            c.setAutoCommit(false);
+
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery("select EXISTS (SELECT * \n" +
+                    "FROM INFORMATION_SCHEMA.TABLES \n" +
+                    "WHERE TABLE_SCHEMA = 'public' \n" +
+                    "AND  TABLE_NAME = 'countries')");
+            rs.next();
+            result = rs.getBoolean(1);
+            if (!result)
+                createCountries();
+            rs.close();
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void createCountries(){
+        String cmd = "ogr2ogr -skipfailures -overwrite -f \"PostgreSQL\" PG:\"host=localhost user=postgres dbname=postgres password=postgres\"" +
+                " countries/countries.shp -nln public.countries";
+        ProcessBuilder pb = new ProcessBuilder("/bin/sh", "-c", cmd);
+        try {
+            Process p = pb.start();
+            BufferedReader stdInput = new BufferedReader(new
+                    InputStreamReader(p.getInputStream()));
+
+            BufferedReader stdError = new BufferedReader(new
+                    InputStreamReader(p.getErrorStream()));
+
+            String s;
+            // read the output from the command
+//            System.out.println("Here is the standard output of the ogr2ogr:\n");
+//            while ((s = stdInput.readLine()) != null) {
+//                System.out.println(s);
+//            }
+
+            // read any errors from the attempted command
+//            System.out.println("Here is the standard error of the ogr2ogr (if any):\n");
+//            while ((s = stdError.readLine()) != null) {
+//                System.out.println(s);
+//            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
