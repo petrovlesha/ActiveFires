@@ -104,24 +104,7 @@ public class DataCreator {
         ProcessBuilder pb = new ProcessBuilder("/bin/sh", "-c", cmd);
         try {
             Process p = pb.start();
-            BufferedReader stdInput = new BufferedReader(new
-                    InputStreamReader(p.getInputStream()));
-
-            BufferedReader stdError = new BufferedReader(new
-                    InputStreamReader(p.getErrorStream()));
-
-            String s;
-//             read the output from the command
-            System.out.println("Here is the standard output of the ogr2ogr:\n");
-            while ((s = stdInput.readLine()) != null) {
-                System.out.println(s);
-            }
-
-//             read any errors from the attempted command
-            System.out.println("Here is the standard error of the ogr2ogr (if any):\n");
-            while ((s = stdError.readLine()) != null) {
-                System.out.println(s);
-            }
+            p.waitFor();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -202,10 +185,10 @@ public class DataCreator {
             stmt.close();
             c.close();
         } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            return result;
+            return false;
         }
+        return result;
+
     }
 
     public static RenderableLayer getPointsLayer(String satname) {
