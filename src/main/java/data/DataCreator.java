@@ -301,13 +301,17 @@ public class DataCreator {
 
             while (rs.next()) {
                 Polygon p = (Polygon) ((PGgeometry) rs.getObject(1)).getGeometry();
+//                MultiPolygon mp = (MultiPolygon) ((PGgeometry) rs.getObject(1)).getGeometry();
 //                for (Polygon p : mp.getPolygons()) {
                     ArrayList<LatLon> pos = new ArrayList<LatLon>();
                     for (int i = 0; i < p.numPoints(); i++) {
                         pos.add(new LatLon(Angle.fromDegrees((p.getPoint(i).y > 180) ? 180 : p.getPoint(i).y),
                                 Angle.fromDegrees((p.getPoint(i).x > 180) ? 180 : p.getPoint(i).x)));
                     }
+//                    pos.add(pos.get(0));
                     SurfacePolygon sp = new SurfacePolygon(pos);
+
+                    boolean deb = pos.get(0).equals(pos.get(pos.size()-1));
 
                     BasicShapeAttributes attributes = new BasicShapeAttributes();
 //                    double intencity = 15D * rs.getDouble(2) / rs.getDouble(3) + 0.1;
@@ -315,12 +319,12 @@ public class DataCreator {
 //                        intencity = 1;
 
                     attributes.setInteriorMaterial(new Material(new Color(255, 0, 0)));
-                    attributes.setInteriorOpacity(0.1);
-                    attributes.setOutlineMaterial(new Material(new Color(255, 0, 0)));
+                    attributes.setInteriorOpacity(0.5);
+                    attributes.setOutlineMaterial(new Material(new Color(0, 0, 0)));
                     sp.setAttributes(attributes);
                     result.addRenderable(sp);
-//                }
-            }
+                }
+//            }
             stat.close();
             conn.close();
         } catch (Exception e) {
@@ -359,7 +363,7 @@ public class DataCreator {
 
     private static void createCountries(){
         String cmd = "ogr2ogr -skipfailures -overwrite -f \"PostgreSQL\" PG:\"host=localhost user=postgres dbname=postgres password=postgres\"" +
-                " countries/countries.shp -nln public.countries";
+                " countries/TM_WORLD_BORDERS_SIMPL-0.3.shp -nln public.countries -nlt MULTIPOLYGON";
         ProcessBuilder pb = new ProcessBuilder("/bin/sh", "-c", cmd);
         try {
             Process p = pb.start();
@@ -370,6 +374,8 @@ public class DataCreator {
                     InputStreamReader(p.getErrorStream()));
 
             String s;
+            p.waitFor();
+            convertMulti();
             // read the output from the command
 //            System.out.println("Here is the standard output of the ogr2ogr:\n");
 //            while ((s = stdInput.readLine()) != null) {
@@ -381,6 +387,29 @@ public class DataCreator {
 //            while ((s = stdError.readLine()) != null) {
 //                System.out.println(s);
 //            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void convertMulti(){
+        Connection c;
+        Statement stmt;
+        try {
+            Class.forName("org.postgresql.Driver");
+            c = DriverManager
+                    .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            "postgres", "postgres");
+            c.setAutoCommit(false);
+
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery("CREATE TABLE polygons_temp ( LIKE countries INCLUDING ALL );\n" +
+                    "INSERT INTO polygons_temp SELECT * (ST_Dump(wkb_geometry)).geom as the_geom from countries\n" +
+                    "DROP TABLE polygons;\n" +
+                    "ALTER TABLE polygons_temp RENAME TO countries;");
+            rs.close();
+            stmt.close();
+            c.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
