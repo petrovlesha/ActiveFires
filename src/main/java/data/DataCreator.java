@@ -6,19 +6,31 @@ import gov.nasa.worldwind.geom.Position;
 import gov.nasa.worldwind.layers.RenderableLayer;
 import gov.nasa.worldwind.render.*;
 import org.apache.commons.io.FileUtils;
+import org.geotools.data.DataStore;
+import org.geotools.data.DataStoreFinder;
+import org.geotools.data.FeatureSource;
+import org.geotools.data.shapefile.ShapefileDataStore;
+import org.geotools.feature.FeatureIterator;
+import org.geotools.referencing.crs.DefaultGeographicCRS;
+import org.opengis.feature.simple.SimpleFeature;
+import org.opengis.feature.simple.SimpleFeatureType;
 import org.postgis.*;
 
 import java.awt.*;
 import java.io.*;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+
+import org.opengis.feature.Feature;
+//import org.geotools.data.*;
 
 import org.postgis.Point;
 import org.postgis.Polygon;
@@ -99,12 +111,34 @@ public class DataCreator {
     }
 
     public static void shpToDb(File shp, String satname) {
-        String cmd = "ogr2ogr -skipfailures -overwrite -f \"PostgreSQL\" PG:\"host=localhost user=postgres dbname=postgres password=postgres\"" +
-                " " + shp.getAbsolutePath() + " -nln public." + satname + "fire";
+        //
+//        String cmd = "ogr2ogr -skipfailures -append -f \"PostgreSQL\" PG:\"host=localhost user=postgres dbname=postgres password=postgres\"" +
+//                " " + shp.getAbsolutePath() + " -nln public." + satname + "fire";
+        String cmd = "shp2pgsql -s 4326 -a -g wkb_geometry " + shp.getAbsolutePath() + " public."+satname+"fire " +
+                "| psql -h localhost -d postgres -U postgres";
         ProcessBuilder pb = new ProcessBuilder("/bin/sh", "-c", cmd);
         try {
+            long time = System.currentTimeMillis();
             Process p = pb.start();
+            String s;
+            BufferedReader stdInput = new BufferedReader(new
+                    InputStreamReader(p.getInputStream()));
+
+            BufferedReader stdError = new BufferedReader(new
+                    InputStreamReader(p.getErrorStream()));
+
+            // read the output from the command
+            System.out.println("Here is the standard error of the command (if any):\n");
+            while ((s = stdError.readLine()) != null) {
+                System.out.println(s);
+            }
+            System.out.println("Here is the standard output of the command:\n");
+            while ((s = stdInput.readLine()) != null) {
+                System.out.println(s);
+            }
+
             p.waitFor();
+            System.out.println(System.currentTimeMillis()-time);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -179,7 +213,7 @@ public class DataCreator {
 
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery(String.format("select exists(select 1 from buffer " +
-                    "where current_date <= acq_date and satname='%s' and days=%d);", satname, days));
+                    "where current_date <= acq_date and days>=%d and satname='%s');",days,satname));
             rs.next();
             result = rs.getBoolean(1);
 
@@ -193,7 +227,7 @@ public class DataCreator {
 
     }
 
-    public static RenderableLayer getPointsLayer(String satname) {
+    public static RenderableLayer getPointsLayer(String satname, int days) {
         RenderableLayer result = new RenderableLayer();
         result.setName("points");
 
@@ -206,13 +240,12 @@ public class DataCreator {
             Connection conn = DriverManager.getConnection(dburl, "postgres", "postgres");
             Statement stat = conn.createStatement();
 
-            String query ;
-            if (satname.equals("modis"))
-                query = String.format("select gc from (select ST_ConvexHull(unnest(ST_ClusterWithin(wkb_geometry, 0.6))) as gc " +
-                        "from modisfire where confidence>50) f where not (st_area(gc)>0 and st_area(gc)<0.1)");
-            else
-                query = String.format("select gc from (select ST_ConvexHull(unnest(ST_ClusterWithin(wkb_geometry, 0.6))) as gc " +
-                        "from viirsfire where confidence='nominal') f where not (st_area(gc)>0 and st_area(gc)<0.1)");
+            String conf = satname.equals("modis") ? ">50" : "='nominal'";
+            String query = String.format("select gc from " +
+                    "(select ST_ConvexHull(unnest(ST_ClusterWithin(wkb_geometry, 0.6))) as gc " +
+                    "from %sfire where confidence%s and acq_date+1+%d>current_date) f " +
+                    "where not (st_area(gc)>0 and st_area(gc)<0.1)",satname,conf,days);
+
             ResultSet rs = stat.executeQuery(query);
 
             while (rs.next()) {
@@ -258,7 +291,7 @@ public class DataCreator {
         return result;
     }
 
-    public static RenderableLayer getFireCountries(String satname) {
+    public static RenderableLayer getFireCountries(String satname,int days) {
         RenderableLayer result = new RenderableLayer();
         result.setName("countries");
         ResultSet rs;
@@ -275,8 +308,8 @@ public class DataCreator {
             rs = stat.executeQuery(String.format("SELECT ((ST_Dump(ST_Buffer(c.wkb_geometry,0.0))).geom)::geometry(Polygon,4326) geom, " +
                     "COUNT(DISTINCT m.wkb_geometry) FROM countries c LEFT JOIN %sfire m " +
                     "ON ST_Contains(c.wkb_geometry, m.wkb_geometry) " +
-                    "WHERE confidence%s GROUP BY c.wkb_geometry " +
-                    "HAVING COUNT(DISTINCT m.wkb_geometry)  > 0", satname, confidence));
+                    "WHERE confidence%s  AND acq_date+1+%d>current_date GROUP BY c.wkb_geometry " +
+                    "HAVING COUNT(DISTINCT m.wkb_geometry)  > 0", satname, confidence, days));
 
             while (rs.next()) {
                 Polygon p = (Polygon) ((PGgeometry) rs.getObject(1)).getGeometry();
@@ -357,14 +390,15 @@ public class DataCreator {
                             "postgres", "postgres");
             c.setAutoCommit(false);
 
+
             stmt = c.createStatement();
             String query = String.format("INSERT INTO public.buffer(" +
                     "satname, days, acq_date) " +
-                    "VALUES ('%s', %d, current_date)" +
+                    "VALUES ('%s', %d, current_date) " +
                     "ON CONFLICT (satname) DO UPDATE SET " +
                     "days = %d, acq_date = current_date;", satname, days, days);
-
-            stmt.executeUpdate(query);
+            System.out.println(query);
+            System.out.println("Wrote report\nAffected rows: "+stmt.executeUpdate(query));
             stmt.close();
             c.close();
         } catch (Exception e) {
@@ -372,6 +406,67 @@ public class DataCreator {
         }
     }
 
+    public static FeatureSource<SimpleFeatureType, SimpleFeature> openShapeFile(String path) throws IOException {
+        File file = new File(path);
+        Map<String, Object> map = new TreeMap<String, Object>();
 
+        try {
+            map.put("url", file.toURI().toURL());
+            map.put("create spatial index", Boolean.TRUE);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        ShapefileDataStore dataStore = (ShapefileDataStore) DataStoreFinder.getDataStore(map);
+        /*
+		 * You can comment out this line if you are using the createFeatureType method (at end of
+		 * class file) rather than DataUtilities.createType
+		 */
+        dataStore.forceSchemaCRS(DefaultGeographicCRS.WGS84);
+
+        String typeName = dataStore.getTypeNames()[0];
+        FeatureSource<SimpleFeatureType, SimpleFeature> source = dataStore.getFeatureSource(typeName);
+
+
+
+
+
+        return source;
+    }
+
+    private static void uploadFeaturesToPostgis(FeatureSource source) throws IOException {
+        Connection c;
+        try {
+            Class.forName("org.postgresql.Driver");
+            c = DriverManager
+                    .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            "postgres", "postgres");
+            c.setAutoCommit(false);
+
+
+            String query = "DELETE FROM PUBLIC.MODISFIRE; ";
+
+            try (FeatureIterator iterator = source.getFeatures().features()) {
+                while (iterator.hasNext()) {
+                    SimpleFeature feature = (SimpleFeature) iterator.next();
+                    query.concat(String.format("INSERT INTO public.modisfire(\n" +
+                                    "            gid, latitude, longitude, brightness, scan, track, acq_date, \n" +
+                                    "            acq_time, satellite, confidence, version, bright_t31, frp, daynight, \n" +
+                                    "            wkb_geometry)\n" +
+                                    "    VALUES (?, ?, ?, ?, ?, ?, ?, \n" +
+                                    "            ?, ?, ?, ?, ?, ?, ?, \n" +
+                                    "            ?);\n",
+                            feature.getAttributes(),feature.getBounds()));
+                    break;
+                }
+            }
+
+//            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }

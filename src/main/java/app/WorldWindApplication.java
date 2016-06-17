@@ -133,9 +133,9 @@ public class WorldWindApplication {
         DataCreator.downloadAndUpdate(satname, days);
         RenderableLayer l;
         if (countries.isSelected())
-            l = DataCreator.getFireCountries(satname);
+            l = DataCreator.getFireCountries(satname,days);
         else
-            l = DataCreator.getPointsLayer(satname);
+            l = DataCreator.getPointsLayer(satname,days);
 
         Layer last = wwd.getModel().getLayers().getLayerByName("countries");
         if (last != null)

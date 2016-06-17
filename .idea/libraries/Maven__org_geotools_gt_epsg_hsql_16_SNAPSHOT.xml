@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.geotools:gt-epsg-hsql:16-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/geotools/gt-epsg-hsql/16-SNAPSHOT/gt-epsg-hsql-16-20160615.233749-33.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/geotools/gt-epsg-hsql/16-SNAPSHOT/gt-epsg-hsql-16-20160615.233749-33-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/geotools/gt-epsg-hsql/16-SNAPSHOT/gt-epsg-hsql-16-20160615.233749-33-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
